@@ -28,7 +28,7 @@ consts:
     2. Configure your server name (e.g., matrix.example.com).
     3. Set up DNS records pointing to your TrueNAS server.
     4. The default client port is 8008. You may need reverse proxy for HTTPS.
-    5. Register users by setting ALLOW_REGISTRATION or use admin tools.
+    5. Register users by enabling registration in the configuration or use admin tools.
 
     For federation to work:
     - Port 8008 must be accessible from the internet
