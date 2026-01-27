@@ -1,0 +1,37 @@
+resources:
+  limits:
+    cpus: 2.0
+    memory: 4096
+
+TZ: Etc/UTC
+
+synapse:
+  postgres_image_selector: postgres_18_image
+  db_password: synapse-test-password
+  server_name: matrix.example.com
+  report_stats: false
+  enable_registration: false
+  additional_envs: []
+
+network:
+  host_network: false
+  web_port:
+    bind_mode: published
+    port_number: 8008
+
+ix_volumes:
+  postgres_data: /opt/tests/mnt/synapse/postgres_data
+  synapse_data: /opt/tests/mnt/synapse/synapse_data
+
+storage:
+  postgres_data:
+    type: ix_volume
+    ix_volume_config:
+      dataset_name: postgres_data
+      create_host_path: true
+  synapse_data:
+    type: ix_volume
+    ix_volume_config:
+      dataset_name: synapse_data
+      create_host_path: true
+  additional_storage: []

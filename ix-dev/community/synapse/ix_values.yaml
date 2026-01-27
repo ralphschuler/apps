@@ -1,13 +1,13 @@
 images:
   image:
     repository: matrixdotorg/synapse
-    tag: v1.120.2
+    tag: v1.145.0
   container_utils_image:
     repository: ixsystems/container-utils
     tag: 1.0.2
   postgres_17_image:
     repository: postgres
-    tag: 17.2-bookworm
+    tag: 17.7-bookworm
   postgres_18_image:
     repository: postgres
     tag: 18.1-trixie
