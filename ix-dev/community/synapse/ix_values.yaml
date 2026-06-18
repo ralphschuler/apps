@@ -1,0 +1,36 @@
+images:
+  image:
+    repository: matrixdotorg/synapse
+    tag: v1.145.0
+  container_utils_image:
+    repository: ixsystems/container-utils
+    tag: 1.0.2
+  postgres_17_image:
+    repository: postgres
+    tag: 17.7-bookworm
+  postgres_18_image:
+    repository: postgres
+    tag: 18.1-trixie
+  postgres_upgrade_image:
+    repository: ixsystems/postgres-upgrade
+    tag: 1.1.7
+
+consts:
+  perms_container_name: permissions
+  synapse_container_name: synapse
+  postgres_container_name: postgres
+  db_user: synapse
+  db_name: synapse
+  notes_body: |
+    Matrix Synapse Server Configuration:
+
+    1. The server must be properly configured before first use.
+    2. Configure your server name (e.g., matrix.example.com).
+    3. Set up DNS records pointing to your TrueNAS server.
+    4. The default client port is 8008. You may need reverse proxy for HTTPS.
+    5. Register users by enabling registration in the configuration or use admin tools.
+
+    For federation to work:
+    - Port 8008 must be accessible from the internet
+    - Proper SSL/TLS configuration is required (use reverse proxy)
+    - DNS SRV records should be configured for your domain
